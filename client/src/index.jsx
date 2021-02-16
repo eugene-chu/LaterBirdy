@@ -3,4 +3,4 @@ import {render} from 'react-dom';
 
 import App from '../component/App.jsx';
 
-render(<App />, document.getElementById('sales'));
+render(<App />, document.getElementById('app'));
