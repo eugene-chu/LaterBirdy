@@ -13,8 +13,8 @@ app.use(bodyparser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
-app.get('/user', (req, res) => {
-    // T.get()
+app.get('/api/tweets', (req, res) => {
+    db.getAll(req, res);
 })
 
 app.post('/api/tweetNow', (req, res) => {
