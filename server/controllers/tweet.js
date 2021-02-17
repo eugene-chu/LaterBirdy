@@ -1,7 +1,7 @@
 const Tweets = require('../db/models/Tweets.js');
 
 exports.getAll = (req, res) => {
-  Tweets.find({}, (err, docs)=> {
+  Tweets.find({}, null, {sort: {_id: 'desc'}}, (err, docs)=> {
     if(err){
       res.status(404).send(`Error occur when looking in the database: ${err}`);
     } else {

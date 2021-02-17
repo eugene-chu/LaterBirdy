@@ -4,7 +4,10 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 635,
     height: 600,
-    title: "Later Birdy"
+    title: "Later Birdy",
+    resizable: false,
+    maximizable: false,
+    fullscreenable: false
   });
 
   win.loadURL('http://localhost:3000');
