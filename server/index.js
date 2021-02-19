@@ -18,26 +18,20 @@ app.get('/api/tweets', (req, res) => {
 })
 
 app.post('/api/tweetNow', (req, res) => {
-    // T.post('statuses/update', req.body, (err, data, response) => {
-    //     if(err){
-    //         res.status(404).send(`Error making tweet: ${err}`);
-    //     } else if(response.statusCode === 200) {
-    //         // try to store this information somewhere? Send it back?
-    //         let info = {
-    //             created: data.created_at,
-    //             id_str: data.id_str,
-    //             text: data.text
-    //         }
-    //         res.status(200).send(info);
-    //     }
-    // });
-    let info = {
-        created_at: new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'long' }).format(new Date()),
-        id_str: '1',
-        text: req.body.status
-    }
-    db.add(req, res, info);
-    // res.status(202).send(info)
+    T.post('statuses/update', req.body, (err, data, response) => {
+        if(err){
+            res.status(404).send(`Error making tweet: ${err}`);
+        } else if(response.statusCode === 200) {
+            let info = {
+                created_at: data.created_at,
+                id_str: data.id_str,
+                text: data.text
+            }
+            db.add(req, res, info);
+        } else {
+            res.status(404).send('Something went wrong');
+        }
+    });
 })
 
 app.listen(PORT, () => {

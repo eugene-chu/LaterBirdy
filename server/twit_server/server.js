@@ -11,4 +11,4 @@ const T = new twit({
 });
 
 
-exports.module = T;
+module.exports = T;

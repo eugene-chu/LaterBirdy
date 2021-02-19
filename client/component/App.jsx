@@ -57,9 +57,10 @@ class App extends React.Component {
             <h1>Welcome to Later Birdy, Dummy Test Bot50!</h1>
             <h2>Send out some tweets for later</h2>
             <TweetForm sendTweet={this.sendTweet}></TweetForm>
+            {this.state.tweets.length !== 0 &&
             <TweetCards>
                 <TweetsSent sent={this.state.tweets} goToTweet={this.goTo}></TweetsSent>
-            </TweetCards>
+            </TweetCards>}
         </React.Fragment>
         );
     }

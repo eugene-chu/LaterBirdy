@@ -30,10 +30,10 @@ let TweetsSent = (props) => {
     return (
         <>
         {props.sent.map((tweets)=> (
-            <TweetWrapper onClick={props.goToTweet} data-id-str={tweets.id_str}>
+            <TweetWrapper key={tweets.id_str} onClick={props.goToTweet} data-id-str={tweets.id_str}>
                 <TweetHeader>Tweet:</TweetHeader>
                 <StatusText>{tweets.text}</StatusText>
-                <TweetTime>{tweets.created_at}</TweetTime>
+                <TweetTime>{new Date(tweets.created_at).toLocaleString()}</TweetTime>
             </TweetWrapper>
         ))}
         </>

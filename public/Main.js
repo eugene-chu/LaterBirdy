@@ -1,4 +1,5 @@
 const { app, BrowserWindow, shell } = require('electron');
+const path = require('path');
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -11,6 +12,7 @@ function createWindow () {
   });
 
   win.loadURL('http://localhost:3000');
+  // win.loadURL(`file://${path.join(__dirname, './index.html')}`);
 
   win.webContents.on('new-window', function(e, url) {
     e.preventDefault();
