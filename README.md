@@ -14,7 +14,7 @@ Because the original idea was only meant for scheduling text tweets, the follow 
 * DMs management
 
 
-After some time away from working on this project, I have decided to take Later Birdy into a different direction. The original code base will be save in a legacy branch, and the new Later Bird will be under "version2" branch.
+After some time away from working on this project, I have decided to take Later Birdy into a different direction. The original code base will be save in a legacy branch, and the new Later Bird will be under "lbv2" branch.
 
 ## New Direction
 
